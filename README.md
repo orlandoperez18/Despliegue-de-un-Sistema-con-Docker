@@ -117,7 +117,49 @@ Nos dirigimos a
 ![mooodle-screen15](imagenes/usuarios.png)
 #
 
-### Agreamos los datos del profesor
+### Agreamos los datos del nuevo profesor
 
-![mooodle-screen09](imagenes/datos-cursos.png)
+![mooodle-screen16](imagenes/profesor.png)
+#
+
+Para darle el rol de profesor debemos de entrar a nuestro curso y en el apartado de "participants" le damos click para agregar "Enrol Users"
+
+![mooodle-screen17](imagenes/roldeprofe.png)
+#
+
+Agregamos al usuario y le asignamos el rol de "Teacher"
+![mooodle-screen18](imagenes/enrol.png)
+#
+
+# Paso 6) Creamos y agregamos a los estudiantes al curso
+
+Nos dirigimos a 
+- Site administration 
+- Users
+- Add a new user
+
+![mooodle-screen15](imagenes/usuarios.png)
+#
+
+### Agreamos los datos de cada alumno
+
+Datos del primer alunmno
+![mooodle-screen19](imagenes/alumno1.png)
+#
+
+Datos del segundo alunmno
+![mooodle-screen20](imagenes/alumno2.png)
+#
+
+Datos del tercer alunmno
+![mooodle-screen21](imagenes/alumno3.png)
+#
+
+Para darle el rol de profesor debemos de entrar a nuestro curso y en el apartado de "participants" le damos click para agregar "Enrol Users"
+
+![mooodle-screen17](imagenes/roldeprofe.png)
+#
+
+Agregamos a los usuarios y le asignamos el rol de "Students"
+![mooodle-screen22](imagenes/students.png)
 #
