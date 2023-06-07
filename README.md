@@ -163,3 +163,7 @@ Para darle el rol de profesor debemos de entrar a nuestro curso y en el apartado
 Agregamos a los usuarios y le asignamos el rol de "Students"
 ![mooodle-screen22](imagenes/students.png)
 #
+
+Se muestra la lista de los usuarios que estan en el curso
+![mooodle-screen23](imagenes/lista.png)
+#
