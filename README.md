@@ -1,6 +1,6 @@
 # Despliegue de un Sistema con Docker
 
-# Instalación de un moodle y configuración básica para crear un curso
+# Instalación de un moodle y configuración básica para crear un curso y la agregación de usuarios
 
 - Instalación con docker-compose 
 
@@ -8,120 +8,116 @@
 ### Correr localmente usando docker
 
 1. Clonar el repositorio al directorio local de instalación
-git clone https://github.com/orlandoperez18/Despliegue-de-un-Sistema-con-Docker.git
+
+    $ git clone https://github.com/orlandoperez18/Despliegue-de-un-Sistema-con-Docker.git
+
+![moodle-scree01](imagenes/paso%20uno.jpeg)
 
 2. Para correr los contenedores
 
-$cd moodle
+    $ cd Despliegue-de-un-Sistema-con-Docker/
 
-$docker compose up
+    $ docker compose up
 
-3. Para detener los contenedores
+![moodle-scree02](imagenes/paso%20dos.jpeg)
 
-$docker compose down
+3. Para solucinar los errores, detenemos los contenedores y hacemos unas configuraciones de grupo y de usuarios
+
+    $ sudo chgrp docker mariadb_data/
+
+    $ sudo chown 1001 mariadb_data/
+
+![moodle-scree02](imagenes/errores.jpeg)
+
+4. Ejecutamos de nuevo el comando
+
+    $ docker compose up
+
+![moodle-scree03](imagenes/errores-corregidos.jpeg)
+
+5. Para verificar que los contenedores estan funcionando 
+
+    $ docker ps -a
+
+![moodle-scree04](imagenes/contenedores.jpeg)
 
 
-# Paso 1) Correr WordPress y Configurar
+# Paso 1) Correr Moodle y Login del web site
 
-- http://localhost:8000/
-- Configure Site Title e.g. WCMX
-- Username e.g. admin
-- Password e.g. 123456 
-- Confirm Password checked
-- Press Install Button
-
-![WordPress-Screen01](imgs/01WP_Install.png)
-
-# Paso 2)Login del web site
-
+- http://localhost:90/
 - Press Log In button
 
-![mooodle-screen1](imagenes/uno.png)
-
-# Paso 3) Login WordPresss con Username y Password
-
-- Login with Username user
-- Password bitnani
-
-![WordPress-Screen03](imgs/03WP_Install.png)
-
-# Paso 4) Seleccionar Menu Pluggins
-
-- Select Option Pluggins
-
-![WordPress-Screen04](imgs/04WP_DeletePluggins.png)
-
-# Paso 5) Agregar Pluggins
-
-- Add Pluggin Guttentor 
-- Select Guttentor pluggin and press Install Now
-
-![WordPress-Screen05](imgs/05WP_AddPluggins.png)
-
-# Paso 6) Agregar Pluggins
-
-- Add Pluggin Classic Editor
-- Select Button Activate
-
-![WordPress-Screen06](imgs/06WP_AddPluggins.png)
-
-# Paso 6) Agregar Pluggins
-
-- Add Pluggin Addons for Gutenberg
-- Select Instal Now
-- Select Button Activate
-
-![WordPress-Screen07_2](imgs/07_2WP_AddPluggins.png)
+![moodle-scree05](imagenes/paso%20tres.jpeg)
 
 
-# Paso 7) Configurar Block editor
-
-- Select Settings
-- Choose Block editor
-- Button Save Changes
-
-![WordPress-Screen07_3](imgs/07_3WP_AddPluggins.png)
-
-# Paso 8) Agregar un Tema
-
-- Select Appereance Menu
-- Choose Add New Theme
-- Search Ample Bussiness Epic
-- Add Theme
-
-![WordPress-Screen07](imgs/07WP_AddPluggins.png)
-
-# Paso 8) Importar una Pagina
-
-- Menu Tools
-- Select Upload file and import
-- Choose wcmx.WordPress.2020-08-10.xml file
 
 
-![WordPress-Screen08](imgs/08Import.png)
+# Paso 2) Login Moodle con Username y Password
 
-# Paso 9) Editar un Post
+Login with 
+- Username: user
+- Password: bitnani
 
-- Esto importa el ejemplo pero no la media (imagenes)
+![mooodle-screen06](imagenes/paso%20cuatro.jpeg)
 
-![WordPress-Screen09](imgs/09Import.png)
+### Dashboard inicial
+
+![mooodle-screen06](imagenes/dashboard.jpeg)
+
+# Paso 3) Creación de un curso
+
+Nos dirigimos a 
+- Site administration 
+- Courses
+- Add a new course
+
+![mooodle-screen08](imagenes/paso-cinco.jpeg)
+
+#
+### Agreamos los datos que nosotros queremos que tenga el nuevo curso
 
 
-# Paso 10) Editar Post
+![mooodle-screen09](imagenes/datos-cursos.jpeg)
+#
 
-- Select Posts Menu
-- Select Test 2 Post
+### Visualización del nuevo curso ya creado
 
-![WordPress-Screen10](imgs/10EditPosts.png)
+![mooodle-screen10](imagenes/curso-creado.jpeg)
+#
 
+# Paso 4) Cambios del perfil de administrador
 
-# Paso 11) Agregar Media a Post 2
+Para realizar cambios para el administrador nos dirigimos "profile"
 
-- Select Post and Button Edit Image
-![WordPress-Screen11](imgs/11WP_AddPhotos.png)
+![mooodle-screen11](imagenes/admin.jpeg)
+#
 
-- Upload images carrusel01-1.jpg carrusel02.jpg carrusel03.jpg
-![WordPress-Screen12](imgs/12WP_AddPhotos.png)
+Despues de haber entrado en "profile", entramos en "edit profile"
 
-- Select image for other post
-![WordPress-Screen13](imgs/13WP_AddPhotos.png)
+![mooodle-screen12](imagenes/admin2.jpeg)
+#
+
+Despues de haber entrado en "edit profile", agregamos el nombre, apellido y correo del administrador
+
+![mooodle-screen13](imagenes/admin3.jpeg)
+#
+
+Visualización de los cambios realizados a la cuenta del administrador
+
+![mooodle-screen14](imagenes/admin4.jpeg)
+#
+
+# Paso 5) Creamos y agregamos al profesor al curso
+
+Nos dirigimos a 
+- Site administration 
+- Users
+- Add a new user
+
+![mooodle-screen15](imagenes/usuarios.jpeg)
+#
+
+### Agreamos los datos del profesor
+
+![mooodle-screen09](imagenes/datos-cursos.jpeg)
+#
